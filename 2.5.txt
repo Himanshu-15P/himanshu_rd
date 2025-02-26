@@ -1,0 +1,23 @@
+/*
+2.5 > Write a C++ program to check whether a number is even or odd without using % or /
+*/
+
+
+#include <iostream>
+
+
+int main() {
+    int num;
+    std::cout << "Enter an integer: ";
+    std::cin >> num;
+    
+    if((num & 1) == 0)
+    {
+        std::cout << num << " is even." << std::endl;
+    }else {
+        std::cout << num << " is odd." << std::endl;
+    }
+
+    return 0;
+}
+

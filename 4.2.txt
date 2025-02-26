@@ -1,0 +1,17 @@
+def is_automorphic(number):
+    if number < 1 or number > 9:
+        return "Invalid input"
+    squared = number * number
+    return str(squared).endswith(str(number))
+
+# Main program
+if __name__ == "__main__":
+    number = int(input("Enter a single-digit positive number: "))
+
+    result = is_automorphic(number)
+    if result == "Invalid input":
+        print(result)
+    elif result:
+        print(f"{number} is an automorphic number.")
+    else:
+        print(f"{number} is not an automorphic number.")

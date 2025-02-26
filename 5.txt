@@ -1,0 +1,19 @@
+5.1) create a new folder “test_new” in the home directory. 
+> go to home directory using terminal and type below command 
+> mkdir folder_name
+
+
+5.2) remove all permissions of the “test_new” directory.
+> chmod 000 test_new
+
+
+5.3) create a “new.txt” file in the “test_new” directory. (with Q5.2, without making changes to permission)
+> as all permission removed (including read,write), we can not create file in directory without root permission.
+> for make file using root
+> sudo touch test_new/new.txt 
+
+
+5.4) delete the “test_new” directory. (with Q5.2, without making changes to permission)
+> as all permission removed (including read,write), we can not delete file in directory without root permission.
+> for delete file using root
+> sudo rm -rf test_new

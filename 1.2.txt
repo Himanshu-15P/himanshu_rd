@@ -1,0 +1,20 @@
+/*
+1.2 > Write a program to print numbers from 1 to 1000 without using relational operators.
+*/
+
+#include <stdio.h>
+
+void printnum(int n)
+{
+    if(n > 0)
+    {
+        printnum(n - 1);
+        printf("Number : %d\r\n", n);
+    }
+}
+
+int main()
+{
+    printnum(1000);
+    return 0;
+}

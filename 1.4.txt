@@ -1,0 +1,25 @@
+/*
+1.4 > Write a C program to toggle a specific bit (e.g., bit 3) of an 8-bit unsigned integer without changing the other bits. 
+Implement the program using bitwise operations.
+*/
+
+
+#include <stdio.h>
+
+unsigned char toggleBit(unsigned char num, int bitPosition) 
+{
+    return num ^ (1 << bitPosition);
+}
+
+int main() {
+    
+    unsigned char num = 0b00001111;
+    int bitPosition = 3; 
+
+    printf("Original number in HEX : 0x%02X\n", num);
+
+    num = toggleBit(num, bitPosition);
+    printf("toggling bit in HEX: 0x%02X\n", bitPosition, num);
+
+    return 0;
+}

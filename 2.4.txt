@@ -1,0 +1,49 @@
+/*
+2.4 > Task: Reverse and Uppercase a String (C++ Console Program) 
+Description: Write a C++ program that mimics an Arduino-style sketch. 
+It takes user input, reverses the string, converts it to uppercase, and prints the output
+*/
+
+#include <stdio.h>
+#include <string.h>
+
+void setup()
+{
+	Serial.begin(9600);
+    while (!Serial) {
+        ; 
+    }
+    Serial.println("Enter a string:");
+}
+
+String reverseAndUppercase(String input) 
+{
+    String result = input;
+    int len = result.length();
+    for (int i = 0; i < len / 2; i++) 
+    {
+        char temp = result[i];
+        result[i] = result[len - i - 1];
+        result[len - i - 1] = temp;
+    }
+
+    for (int i = 0; i < len; i++) 
+    {
+        result[i] = toupper(result[i]);
+    }
+    return result;
+
+void loop()
+{
+    String input = "";
+    String output = "";
+
+    if (Serial.available() > 0) {
+        input = Serial.readStringUntil('\n');
+        input.trim();
+        output = reverseAndUppercase(input);
+        Serial.print("Reversed and Uppercase: ");
+        Serial.println(output);
+    }
+
+}

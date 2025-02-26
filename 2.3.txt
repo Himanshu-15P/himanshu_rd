@@ -1,0 +1,40 @@
+/*
+2.3 > Given two numbers a and b, the task is to find the GCD of the two numbers?
+Input: a = 20, b = 28 
+Output: 4 
+*/
+
+
+#include <stdio.h>
+
+int gcd(int a, int b)
+{
+    if (a == 0){
+        return b;
+	}
+    if (b == 0){
+        return a;
+	}
+
+    if (a == b){
+        return a; // value of a and b is same in last that is 4
+	}
+
+    if (a > b)
+    {
+        return gcd(a - b, b); // check for (28 - 20, 20)greater or not
+    }
+    return gcd(a, b - a); // check for (20, 28 - 20)greater or not
+}
+
+int main()
+{
+    int a = 20, b = 28;
+    printf("GCD of %d and %d is %d ", a, b, gcd(a, b));
+    return 0;
+}
+
+>> EXP : 
+at every iteration recursive function check that both number come at that point where GCD number met 
+at last iteration value of b and a will be same is 4 then its GCD
+
